@@ -411,8 +411,8 @@ document.getElementById("clearSearch").addEventListener("click", () => {
 });
 document.getElementById("themeToggle").addEventListener("click", () => {
   const root = document.documentElement;
-  root.classList.toggle("light");
-  try { localStorage.setItem(THEME_KEY, root.classList.contains("light") ? "light" : "dark"); } catch (_) {}
+  root.classList.toggle("dark");
+  try { localStorage.setItem(THEME_KEY, root.classList.contains("dark") ? "dark" : "light"); } catch (_) {}
 });
 document.addEventListener("keydown", event => {
   if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
@@ -429,7 +429,7 @@ document.addEventListener("keydown", event => {
 });
 
 try {
-  if (localStorage.getItem(THEME_KEY) === "light") document.documentElement.classList.add("light");
+  if (localStorage.getItem(THEME_KEY) === "dark") document.documentElement.classList.add("dark");
 } catch (_) {}
 document.getElementById("resourceCount").textContent = resources.length;
 document.getElementById("categoryCount").textContent = resources.reduce((set, item) => set.add(item.category), new Set()).size;
