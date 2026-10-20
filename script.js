@@ -247,14 +247,31 @@ function normalize(value) {
 function getCategories() {
   return ["全部资源", ...new Set(resources.map(item => item.category))];
 }
+const searchAliases = {
+  "gee": ["google earth engine", "谷歌地球引擎", "云端遥感"],
+  "google earth engine": ["gee", "谷歌地球引擎", "云端遥感"],
+  "dem": ["数字高程模型", "高程", "地形"],
+  "数字高程模型": ["dem", "高程", "地形"],
+  "sar": ["合成孔径雷达", "雷达影像", "asf", "sentinel-1"],
+  "modflow": ["地下水", "地下水模拟", "数值模拟"],
+  "landsat": ["陆地卫星", "卫星影像", "遥感"],
+  "sentinel": ["哥白尼", "copernicus", "卫星影像", "遥感"],
+  "开源": ["qgis", "gdal", "geopandas", "openstreetmap"]
+};
+function expandedQuery(query) {
+  const normalized = normalize(query);
+  const aliases = searchAliases[normalized] || [];
+  return [normalized, ...aliases.map(normalize)].filter(Boolean);
+}
 function filteredResources() {
-  const q = normalize(state.query);
+  const queryTerms = expandedQuery(state.query);
   const favorites = getFavorites();
   return resources.filter(item => {
     const categoryMatch = state.category === "全部资源" || item.category === state.category;
     const favoriteMatch = !state.favoritesOnly || favorites.has(item.url);
     const haystack = normalize([item.name, item.short, item.category, item.description, item.url, ...(item.tags || [])].join(" "));
-    return categoryMatch && favoriteMatch && (!q || haystack.includes(q));
+    const queryMatch = !state.query.trim() || queryTerms.some(term => haystack.includes(term));
+    return categoryMatch && favoriteMatch && queryMatch;
   });
 }
 function renderCategories() {
@@ -281,6 +298,7 @@ function createCard(item, favorites) {
   const card = document.createElement("article");
   card.className = "resource-card";
   card.style.setProperty("--logo-color", item.color || "var(--accent)");
+  card.style.setProperty("--card-color", item.color || "var(--accent)");
   card.style.setProperty("--card-glow", item.glow || "rgba(108,224,192,.05)");
   card.style.setProperty("--card-border", `${item.color || "#6ce0c0"}66`);
   card.style.setProperty("--logo-bg", `${item.color || "#6ce0c0"}14`);
@@ -368,6 +386,10 @@ function renderResources() {
   grid.hidden = items.length === 0;
   document.getElementById("visibleCount").textContent = items.length;
   document.getElementById("favoriteCount").textContent = favorites.size;
+  const summary = document.getElementById("resultSummary");
+  if (summary) {
+    summary.textContent = state.query.trim() ? `“${state.query.trim()}”` : state.favoritesOnly ? "我的收藏" : state.category;
+  }
   document.getElementById("allFilter").classList.toggle("active", !state.favoritesOnly);
   document.getElementById("favoritesFilter").classList.toggle("active", state.favoritesOnly);
 }
