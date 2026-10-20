@@ -149,6 +149,69 @@ const resources = [
     url: "https://geopandas.org/",
     tags: ["Python", "开发", "开源", "空间分析"], badge: "Python",
     color: "#d5deed", glow: "rgba(213,222,237,.07)"
+  },
+  {
+    name: "USGS 美国地质调查局", short: "USGS", category: "地理空间数据",
+    description: "美国地质调查局官方门户，汇集地球科学研究、地质、水资源、地形与遥感数据资源。",
+    url: "https://www.usgs.gov/",
+    tags: ["USGS", "地质", "水文", "地形", "地球科学", "官方数据"], badge: "官方门户",
+    color: "#6ce0c0", glow: "rgba(108,224,192,.08)"
+  },
+  {
+    name: "中国地质云", short: "地质云", category: "地理空间数据",
+    description: "中国地质调查相关地学数据与信息服务入口。",
+    url: "https://geocloud.cgs.gov.cn/",
+    tags: ["中国", "地质", "地学数据", "地质调查", "云平台"], badge: "中国地学",
+    color: "#6ce0c0", glow: "rgba(108,224,192,.08)"
+  },
+  {
+    name: "ASF Vertex", short: "ASF", category: "遥感与影像",
+    description: "阿拉斯加卫星设施数据检索平台，适用于 Sentinel-1 等 SAR 雷达影像搜索与下载。",
+    url: "https://search.asf.alaska.edu/#/?zoom=11.000&center=-87.269,39.230",
+    tags: ["遥感", "SAR", "Sentinel-1", "雷达影像", "合成孔径雷达", "ASF"], badge: "SAR 数据",
+    color: "#f2a86c", glow: "rgba(242,168,108,.09)"
+  },
+  {
+    name: "中国科学院地理空间数据云", short: "GSCloud", category: "地理空间数据",
+    description: "地理空间数据云入口，可查找遥感影像、数字高程及其他地理空间数据产品。",
+    url: "http://www.gscloud.cn/#page5",
+    tags: ["中国", "地理数据", "遥感影像", "DEM", "数据下载"], badge: "数据平台",
+    color: "#6ce0c0", glow: "rgba(108,224,192,.08)"
+  },
+  {
+    name: "GISRS 数据资源", short: "GISRS", category: "地理空间数据",
+    description: "GIS 与遥感相关数据资源网站，可作为专题数据与资料检索入口。",
+    url: "https://www.gisrsdata.com/",
+    tags: ["GIS", "遥感", "数据下载", "专题数据", "中国"], badge: "数据资源",
+    color: "#6ce0c0", glow: "rgba(108,224,192,.08)"
+  },
+  {
+    name: "GISREAL 地理空间资源", short: "GISREAL", category: "地理空间数据",
+    description: "地理信息与遥感相关资源入口，便于查找空间数据和应用资料。",
+    url: "https://www.gisreal.cn/",
+    tags: ["GIS", "遥感", "地理信息", "数据资源", "中国"], badge: "资源门户",
+    color: "#6ce0c0", glow: "rgba(108,224,192,.08)"
+  },
+  {
+    name: "ArcGIS Living Atlas Wayback", short: "Wayback", category: "遥感与影像",
+    description: "探索 Esri World Imagery 的历史影像版本，比较不同时期的卫星与航空影像。",
+    url: "https://livingatlas.arcgis.com/wayback/#active=13851&mode=explore&mapCenter=-115.29408%2C36.06406%2C14",
+    tags: ["ArcGIS", "历史影像", "卫星影像", "时序", "变化检测", "Living Atlas"], badge: "历史影像",
+    color: "#f2a86c", glow: "rgba(242,168,108,.09)"
+  },
+  {
+    name: "Google Earth Engine Code Editor", short: "GEE", category: "遥感与影像",
+    description: "Google Earth Engine 在线代码编辑器，用 JavaScript 调用云端地球观测数据进行遥感分析。",
+    url: "https://code.earthengine.google.com/",
+    tags: ["Google", "Earth Engine", "GEE", "遥感", "JavaScript", "云计算", "影像分析"], badge: "云端分析",
+    color: "#f2a86c", glow: "rgba(242,168,108,.09)"
+  },
+  {
+    name: "NASA Landsat Science", short: "Landsat", category: "遥感与影像",
+    description: "NASA Landsat 科学任务门户，介绍 Landsat 卫星、任务进展、影像及地表变化应用。",
+    url: "https://landsat.gsfc.nasa.gov/",
+    tags: ["NASA", "Landsat", "卫星", "遥感", "地表变化", "科学任务"], badge: "任务门户",
+    color: "#f2a86c", glow: "rgba(242,168,108,.09)"
   }
 ];
 

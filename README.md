@@ -59,3 +59,8 @@ python3 -m http.server 8000
 ```
 
 将占位地址替换为实际的 GitHub Pages 地址。此规则只匹配提交后的 Google 搜索请求；浏览器地址栏中的单个词是否直接作为网址处理，由浏览器自身决定。
+
+
+## 本次扩展资源
+
+新增了 USGS 官方门户、中国地质云、ASF Vertex、地理空间数据云、GISRS Data、GISREAL、ArcGIS Living Atlas Wayback、Google Earth Engine Code Editor 和 NASA Landsat Science。EarthExplorer 与 Copernicus Data Space 已在原有条目中保留，避免重复。
