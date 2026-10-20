@@ -1,1 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="GIS、地下水模拟、遥感与地理空间数据资源导航。">
+  <title>GIS Navigator · 地理空间资源导航</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="GIS Navigator 首页">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" role="img"><path d="M20 3 35 11.5V28.5L20 37 5 28.5V11.5Z"/><path d="M5 11.5 20 20l15-8.5M20 20v17M12.5 7.2 27.5 15.7v8.6L12.5 15.7Z"/></svg>
+      </span>
+      <span><strong>GIS<span class="brand-accent"> Navigator</span></strong><small>GEOSPATIAL RESOURCE HUB</small></span>
+    </a>
+    <div class="topbar-right">
+      <span class="status-dot"></span><span class="status-label">RESOURCE DIRECTORY</span>
+      <button class="icon-button" id="themeToggle" type="button" aria-label="切换明暗主题" title="切换明暗主题">☼</button>
+    </div>
+  </header>
 
+  <main class="container">
+    <section class="hero">
+      <div class="eyebrow"><span class="eyebrow-line"></span> MAP YOUR NEXT DISCOVERY</div>
+      <h1>探索地理空间的<br><span class="gradient-text">无限可能。</span></h1>
+      <p class="hero-copy">从地下水数值模拟到遥感影像，从空间分析到开放数据。<br class="desktop-break">把常用的 GIS 工具与数据入口，集中在一个地方。</p>
+      <form class="search-box" id="searchForm" role="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg>
+        <input id="siteSearch" type="search" placeholder="搜索工具、数据、关键词……" autocomplete="off" aria-label="搜索导航资源">
+        <kbd>⌘ K</kbd>
+        <button type="submit">搜索 <span>↗</span></button>
+      </form>
+      <div class="quick-tags" aria-label="快速筛选">
+        <span>快速筛选</span>
+        <button type="button" data-quick="地下水">地下水模拟</button>
+        <button type="button" data-quick="遥感">遥感数据</button>
+        <button type="button" data-quick="开源">开源工具</button>
+        <button type="button" data-quick="高程">高程数据</button>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="导航概览">
+      <div class="stat"><span class="stat-icon">◈</span><div><strong id="resourceCount">—</strong><small>精选资源</small></div></div>
+      <div class="stat"><span class="stat-icon">⌘</span><div><strong id="categoryCount">—</strong><small>资源分类</small></div></div>
+      <div class="stat"><span class="stat-icon">↗</span><div><strong>全球</strong><small>开放访问入口</small></div></div>
+      <div class="stats-note">为研究、建模与空间分析而整理 <span>✳</span></div>
+    </section>
+
+    <section class="directory">
+      <div class="section-heading">
+        <div><div class="eyebrow"><span class="eyebrow-line"></span> THE DIRECTORY</div><h2>资源导航<span class="heading-period">.</span></h2></div>
+        <div class="view-controls">
+          <button id="allFilter" class="filter-pill active" type="button">全部资源 <span id="visibleCount">0</span></button>
+          <button id="favoritesFilter" class="filter-pill" type="button">★ 我的收藏 <span id="favoriteCount">0</span></button>
+        </div>
+      </div>
+      <nav id="categoryNav" class="category-nav" aria-label="资源分类"></nav>
+      <div id="resourceGrid" class="resource-grid" aria-live="polite"></div>
+      <div id="emptyState" class="empty-state" hidden>
+        <span class="empty-icon">⌕</span><h3>没有找到匹配资源</h3><p>试试其他关键词，或切换资源分类。</p>
+        <button id="clearSearch" class="secondary-button" type="button">清除筛选</button>
+      </div>
+    </section>
+
+    <section class="custom-note">
+      <div class="custom-icon">＋</div>
+      <div><strong>想加入自己的常用网站？</strong><p>在 <code>script.js</code> 中编辑 <code>resources</code> 数组即可添加、删除或调整资源。</p></div>
+      <a href="https://github.com/" target="_blank" rel="noopener noreferrer">前往 GitHub <span>↗</span></a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="footer-brand" href="./">GIS Navigator</a>
+    <span>独立资源索引 · 外部网站由各自所有者维护</span>
+    <span class="footer-right">BUILT FOR SPATIAL THINKING <span>✳</span></span>
+  </footer>
+  <noscript><div class="noscript">此导航页面需要启用 JavaScript 才能搜索和显示资源。</div></noscript>
+</body>
+</html>
